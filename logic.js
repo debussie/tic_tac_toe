@@ -1,4 +1,3 @@
-//Global Variables
 this.turn = 0;
 this.theSquare;
 this.cxt;
@@ -10,7 +9,6 @@ this.owner = ['none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'n
 this.clicked = [false, false, false, false, false, false, false, false, false];
 this.winningSets = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
-//PvP Game Logic
 function squareClicked(squareNumber) {
 	theSquare = 'square' + squareNumber;
 	c = document.getElementById(theSquare);
@@ -35,15 +33,16 @@ function squareClicked(squareNumber) {
 		turn++;
 		clicked[squareNumber-1] = true;
 		squaresFilled++;
-		checkForWinners(owner[squareNumber-1]);
+		setTimeout (function() {
+			checkForWinners(owner[squareNumber-1]);
+		}, 200);
 	}
 	if (squaresFilled == 9 && gameOver == false) {
-		alert('There are no winners');
+		alert('There is nothing in the desert, and no man needs nothing.');
 		location.reload(true);
 	}
 }
 
-//Check Board for Winning Condition
 function checkForWinners(symbol) {
 	for (var n = 0; n < winningSets.length; n++) {
 		var i = owner[winningSets[n][0]] == symbol;

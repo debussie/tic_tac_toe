@@ -19,12 +19,14 @@ function drawO(squareNumber) {
   		cxt.drawImage(img,0,0);
 	}, false);
 	img.src = 'images/o.png';
-	}, 50);
+	}, 10);
 	owner[squareNumber - 1] = 'O';
 	turn++;
 	clicked[squareNumber-1] = true;
 	squaresFilled++;
-	checkForWinners(owner[squareNumber-1]);
+	setTimeout (function() {
+		checkForWinners(owner[squareNumber-1]);
+	}, 200);
 }
 
 function squareClicked(squareNumber) {
@@ -42,14 +44,16 @@ function squareClicked(squareNumber) {
 			turn++;
 			clicked[squareNumber-1] = true;
 			squaresFilled++;
-			checkForWinners(owner[squareNumber-1]);
+			setTimeout (function() {
+				checkForWinners(owner[squareNumber-1]);
+			}, 200);
 			setTimeout(function() {
 				computerLogic1();
 			}, 200);
 		}
 	}
 	if (squaresFilled == 9 && gameOver == false) {
-		alert('Tie Game');
+		alert('There is nothing in the desert, and no man needs nothing.');
 		location.reload(true);
 	}
 }
@@ -157,6 +161,6 @@ function playAgain() {
 		location.reload(true);
 	}
 	else {
-		alert('Good Luck!');
+		alert('Goodbye!');
 	}
 }

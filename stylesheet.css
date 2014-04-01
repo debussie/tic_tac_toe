@@ -1,0 +1,15 @@
+body {
+	background-image: url('images/background.jpg');
+	background-repeat:repeat-x;
+	background-attachment: fixed;
+	background-position: center;
+	text-align: center;
+}
+
+canvas {
+	border: 1px solid white;
+	position: relative;
+	background-color: white;
+	opacity: .6;
+	z-index: 0;
+}

@@ -9,7 +9,6 @@ this.gameOver = false;
 this.owner = ['none', 'none', 'none', 'none', 'none', 'none', 'none', 'none', 'none'];
 this.clicked = [false, false, false, false, false, false, false, false, false];
 this.winningSets = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-this.recycle = 0;
 
 //Universal Draw 'O' for AI function
 function drawO(squareNumber) {
@@ -106,7 +105,7 @@ function computerLogic2() {
 	}
 }
 
-//5th AI response - play center space
+//3rd AI response - play center space
 function computerLogic3() {
 	alert('AI');
 	if (owner[4] == 'none') {
@@ -118,7 +117,7 @@ function computerLogic3() {
 	}
 }
 
-//7th AI response - play empty corner
+//4th AI response - play empty corner
 function computerLogic4() {
 	if (owner[0] == 'none') {
 		drawO(1);
@@ -141,7 +140,7 @@ function computerLogic4() {
 	}
 }
 
-//8th AI response  play side
+//5th AI response  play side
 function computerLogic5() {
 	if (owner[1] == 'none') {
 		drawO(2);
